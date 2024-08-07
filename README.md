@@ -1,6 +1,8 @@
 # Duper
 
-**TODO: Add description**
+**Description**
+
+Ongoing project to find duplicates in a filesystem using genservers.
 
 ## Installation
 
