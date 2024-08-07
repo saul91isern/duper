@@ -60,7 +60,7 @@ defmodule Duper.Results do
 
   @impl GenServer
   def handle_cast({:add, path, hash}, results) do
-    results = Map.update(results, hash, [path], fn existing -> [existing | path] end)
+    results = Map.update(results, hash, [path], fn existing -> [path | existing] end)
     {:noreply, results}
   end
 
