@@ -25,6 +25,16 @@ defmodule Duper.PathFinder do
     DirWalker.start_link(path)
   end
 
+  @doc """
+  Gets next path to process in our file system.
+
+  Returns `path`.
+
+  ## Examples
+
+  iex> Duper.PathFinder.next_path()
+  "/path/foo/bar"
+  """
   def next_path do
     GenServer.call(@module, :next_path)
   end
