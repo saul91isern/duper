@@ -11,7 +11,8 @@ defmodule Duper.Application do
       # Starts a worker by calling: Duper.Worker.start_link(arg)
       Duper.Results,
       {Duper.PathFinder, "."},
-      Duper.WorkerSupervisor
+      Duper.WorkerSupervisor,
+      {Duper.Gatherer, 1}
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
