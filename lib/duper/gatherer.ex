@@ -38,7 +38,7 @@ defmodule Duper.Gatherer do
 
   @impl GenServer
   def handle_continue(worker_count, state) do
-    Enum.each(1..worker_count, fn _ -> Duper.WorkerSupervisor.add_worker() end)
+    Enum.each(1..worker_count, fn _ -> Duper.WorkerSupervisor.add_worker() end) |> dbg()
     {:noreply, state}
   end
 
@@ -51,7 +51,7 @@ defmodule Duper.Gatherer do
 
   @impl GenServer
   def handle_cast(:done, worker_count) do
-    {:ok, worker_count - 1}
+    {:noreply, worker_count - 1}
   end
 
   @impl GenServer
